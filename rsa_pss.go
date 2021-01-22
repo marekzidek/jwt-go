@@ -122,7 +122,7 @@ func (m *SigningMethodRSAPSS) Sign(signingString string, key interface{}) (strin
 	case *rsa.PrivateKey:
 		rsaKey = k
 	default:
-		return "", ErrInvalidKeyType
+		return "", errors.New("key is annoying")
 	}
 
 	// Create the hasher
